@@ -12,7 +12,7 @@ const CitySearchScreen = ({navigation}) => {
    */
   function getCity(searchPrompt){
     setLoading(true);
-    fetch(`http://api.geonames.org/searchJSON?q=${searchPrompt}&maxRows=100&orderby=population&username=weknowit`)
+    fetch(`http://api.geonames.org/searchJSON?q=${searchPrompt}&maxRows=100&orderby=population&username=USERNAME`)
       .then((response) => response.json())
       .then((json) => {
         const resultArr = json.geonames.filter(x => x.name === searchPrompt).map(x => [x.name, x.population])[0];

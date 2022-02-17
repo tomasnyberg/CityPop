@@ -13,7 +13,7 @@ const CountrySearchScreen = ({navigation}) => {
 
   function getCountry(searchPrompt) {
     setLoading(true);
-    fetch(`http://api.geonames.org/searchJSON?q=${searchPrompt}&maxRows=200&orderby=population&username=weknowit`)
+    fetch(`http://api.geonames.org/searchJSON?q=${searchPrompt}&maxRows=200&orderby=population&username=USERNAME`)
       .then((response) => response.json())
       .then((json) => {
         const resultArr = json.geonames
